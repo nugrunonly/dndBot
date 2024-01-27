@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Test</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript">
+window.onload = function() {
+    setInterval(function() {
+        fetch('image_url.txt')
+            .then(response => response.text())
+            .then(url => {
+                document.getElementById("myImage").src = url;
+            })
+            .catch(console.error);
+    }, 5000); // check for a new image every 5 seconds
+};
+</script>
+</head>
+<body>
+    <img id="myImage" src="">
+</body>
+</html>
